@@ -1,0 +1,19 @@
+{
+    "name": "businesshub/product",
+    "description": "This is product package",
+    "type": "laravel-package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Businesshub\\Product\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sakhawathossensadi",
+            "email": "newtonss919@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
