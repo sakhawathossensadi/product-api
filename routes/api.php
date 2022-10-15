@@ -11,13 +11,14 @@ Route::group(
     function () {
         Route::group(['middleware' => 'guest:api'], function () {
             Route::get('hello', function () {
-                return "dsfndsn";
+                return "Hello";
             });
         });
 
         Route::group(['middleware' => 'guest:api'], function () {
             Route::get('/', [ProductController::class, 'index'])->name('product.list');
             Route::post('/', [ProductController::class, 'store'])->name('product.store');
+            Route::get('/{id}/details', [ProductController::class, 'show'])->name('product.details');
         });
     }
 );

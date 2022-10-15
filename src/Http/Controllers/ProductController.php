@@ -24,4 +24,11 @@ class ProductController extends BaseController
 
         return new ProductResource($product);
     }
+
+    public function show($id, Request $request)
+    {
+        $product = Product::where('id', $id)->first();
+
+        return new ProductResource($product);
+    }
 }
