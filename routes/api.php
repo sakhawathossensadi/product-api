@@ -1,5 +1,6 @@
 <?php
 
+use Businesshub\Product\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(
@@ -13,9 +14,10 @@ Route::group(
                 return "dsfndsn";
             });
         });
+
+        Route::group(['middleware' => 'guest:api'], function () {
+            Route::get('/', [ProductController::class, 'index'])->name('product.list');
+            Route::post('/', [ProductController::class, 'store'])->name('product.store');
+        });
     }
 );
-
-Route::get('ff', function () {
-    return "eafae";
-});
